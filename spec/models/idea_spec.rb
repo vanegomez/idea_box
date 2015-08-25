@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Idea, type: :model do
-  let(:idea) { Idea.create(title: "Title", body: "Body", quality: "quality") }
+  let(:idea) { Idea.create(title: "Title", body: "Body", quality: "Swill") }
 
   it 'is invalid without a title' do
     idea.title = nil
