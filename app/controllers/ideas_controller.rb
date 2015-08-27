@@ -11,8 +11,8 @@ class IdeasController < ApplicationController
   end
 
   def destroy
-    @idea = Idea.find(params[:id])
-    @idea.destroy
+    idea = Idea.find(params[:id])
+    idea.destroy!
 
     render json: {status: :success}
   end

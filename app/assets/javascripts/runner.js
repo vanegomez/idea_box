@@ -1,6 +1,6 @@
 $(document).ready(function() {
   $("#new_idea").submit(createIdea);
-  $("#ideas").delegate("#delete", 'click', deleteIdea);
+  deleteIdea();
 });
 
 function createIdea(event) {
@@ -20,14 +20,14 @@ function ideaData() {
 
 function postIdea(){
   $.post("/ideas", ideaData(), function(data) {
-    $("#ideas").prepend(data);
+    $(".ideas").prepend(data);
     $("#new_idea").trigger('reset');
-    console.log(data);
   });
 }
 
 function deleteIdea(){
-    var $idea = $(this).closest(".idea")
+  $(".row").delegate("#delete", 'click', function() {
+    var $idea = $(this).closest(".idea");
 
     $.ajax({
       type: 'DELETE',
@@ -36,4 +36,5 @@ function deleteIdea(){
         $idea.remove()
       }
     });
+  });
 }
