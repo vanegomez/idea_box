@@ -1,0 +1,24 @@
+<div class="idea" data-id="<%= idea.id %>">
+  <!--<h3><%#= idea.title %></h3>-->
+  <!--<p><strong><%#= idea.quality %></strong> | <%#= idea.body %></p>-->
+  <div class="row">
+  <div class="small-9 columns small-centered">
+    <article class="event">
+
+      <div class="event-date">
+        <p class="event-month">Quality</p>
+        <p class="event-day"><%= idea.quality %></p>
+      </div>
+
+      <div class="event-desc">
+        <h4 class="event-desc-header"><%= idea.title %></h4>
+        <p class="event-desc-detail"><span class="event-desc-time"></span><%= idea.body %></p>
+        <a id="delete">Delete</a>
+      </div>
+
+    </article>
+
+    <hr>
+  </div>
+</div>
+</div>
